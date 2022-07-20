@@ -26,12 +26,12 @@ const  Painting = ({
 }
 
 Painting.propTypes = {
-  url: PropTypes.string,
-  title: PropTypes.string,
-  profileUrl:  PropTypes.string,
+  url: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  profileUrl:  PropTypes.string.isRequired,
   authorName: PropTypes.string,
-  price: PropTypes.number,
-  quantity: PropTypes.number,
+  price: PropTypes.number.isRequired,
+  quantity: PropTypes.number.isRequired,
 }
 
 export default Painting
