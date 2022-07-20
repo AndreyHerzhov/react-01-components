@@ -1,35 +1,37 @@
-import PropTypes from 'prop-types';
-import defaultImage from './default.jpg';
+import PropTypes from 'prop-types'; // ES6
+import defaultImage from './default.jpg'
 
-const Painting = ({
-  imageUrl = defaultImage,
-  title,
-  profileUrl,
-  author = 'не известно',
+
+console.log(defaultImage)
+
+const  Painting = ({
+  url = defaultImage, title, 
+  profileUrl, authorName = 'Не известно', 
   price,
   quantity,
 }) => {
   return (
-    <div>
-      <img src={imageUrl} alt={title} width="480" />
-      <h2>{title}</h2>
-      <p>
-        Автор: <a href={profileUrl}>{author}</a>
-      </p>
-      <p>Цена: {price} кредитов</p>
-      <p>Доступность: {quantity < 10 ? 'заканчивается' : 'есть в наличии'}</p>
-      <button type="button">Добавить в корзину</button>
-    </div>
-  );
-};
+      <div>
+        <img src={url} alt={title} width="480" />
+        <h2>{title}</h2>
+        <p>
+          Автор: <a href={profileUrl}>{authorName}</a>
+        </p>
+        <p>Цена: {price}</p>
+        <p>Доступность: {quantity < 10 ? 'заканчивается' : 'есть в наличии'}  </p>
+        <button type="button">Добавить в корзину</button>
+      </div>
+    
+  )
+}
 
 Painting.propTypes = {
-  imageUrl: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  profileUrl: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  quantity: PropTypes.number.isRequired,
-};
+  url: PropTypes.string,
+  title: PropTypes.string,
+  profileUrl:  PropTypes.string,
+  authorName: PropTypes.string,
+  price: PropTypes.number,
+  quantity: PropTypes.number,
+}
 
-export default Painting;
+export default Painting
